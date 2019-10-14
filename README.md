@@ -1,7 +1,7 @@
 # Burgers
 Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
 
-https://burger-app-2019-10.herokuapp.com/burgers
+https://burger-app-2019-10.herokuapp.com/
 
 Overview
 In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and an ORM, either your own homemade, OR Sequelize. (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
