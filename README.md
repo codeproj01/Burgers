@@ -73,8 +73,9 @@ Create a button in index.handlebars that will submit the user input into the dat
 ## TECHNOLOGIES USED
 * Javascript
 * Nodejs
+* MVC Design
 * Node packages:
     * mysql
-    * MVC
+    * Handlebars
     * Express
     * ORM 
