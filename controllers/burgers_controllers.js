@@ -9,8 +9,8 @@ router.get('/', function(req, res) {
 
 router.get('/burgers', function(req, res) {
 	burger.all(function (data) {
-		let hbsObject = { burgers: data };
-		res.render('index', hbsObject);
+		let handlebarsObj = { burgers: data };
+		res.render('index', handlebarsObj);
 	});
 });
 
@@ -22,11 +22,11 @@ router.post('/burgers/create', function(req, res){
 });
 
 router.put('/burgers/update/:id', function (req, res) {
-	let condition = 'id = ' + req.params.id;
+	let state = 'id = ' + req.params.id;
 
-	console.log('condition', condition);
+	console.log('state', state);
 
-	burger.update({ devoured: req.body.devoured }, condition, function () {
+	burger.update({ devoured: req.body.devoured }, state, function () {
 		res.redirect('/burgers');
 	});
 });
