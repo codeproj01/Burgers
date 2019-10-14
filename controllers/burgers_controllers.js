@@ -31,4 +31,19 @@ router.put('/burgers/update/:id', function (req, res) {
 	});
 });
 
+//DELETE route to throw away a burger.
+router.delete("/api/burgers/:id", function(req, res) {
+	var state = "id = " + req.params.id;
+  
+	burger.delete(state, function(result) {
+	  if (result.affectedRows == 0) {
+		// If no rows were changed, then the ID must not exist, so 404
+		return res.status(404).end();
+	  } else {
+		res.status(200).end();
+	  }
+	});
+  });
+  
+
 module.exports = router;

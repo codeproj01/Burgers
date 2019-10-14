@@ -41,6 +41,24 @@ let orm = {
 			cb(res);
 		});
 	},
-};
+	//
+	//Delete function/query
+    delete: function(tableName, state, cb) {
+		var queryString = "DELETE FROM " + tableName;
+		queryString += " WHERE ";
+		queryString += state;
+	
+		connection.query(queryString, function(err, res) {
+		  if (err) {
+			throw err;
+		  }
+	
+		  cb(res);
+		});
+	  }
+	
+	};
+  
+//};
 
 module.exports = orm;
