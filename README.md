@@ -1,5 +1,6 @@
 # Burgers
 Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
+A full stack, MVC (Model-View-Controller) application implementing CRUD.
 
 https://burger-app-2019-10.herokuapp.com/
 
