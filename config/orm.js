@@ -1,4 +1,4 @@
-let connection = require('./connection.js');
+const connection = require('./connection.js');
 
 function objToSql(ob) {
 	let arr = [];
