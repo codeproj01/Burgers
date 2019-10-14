@@ -27,7 +27,7 @@ Export at the end of the burger.js file.
 
 
 
-# Controller setup
+### Controller setup
 ______________________________________________________________________
 
 Inside your burger directory, create a folder named controllers.
@@ -47,7 +47,7 @@ Create the router for the app, and export the router at the end of your file.
 
 
 
-# View setup
+### View setup
 ______________________________________________________________________
 
 Inside your burger directory, create a folder named views.
