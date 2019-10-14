@@ -1,6 +1,6 @@
 const connection = require('./connection.js');
 
-function objToSql(ob) {
+function sqlObj(ob) {
 	let arr = [];
 	for (let key in ob) {
 		if (ob.hasOwnProperty(key)) {
@@ -12,34 +12,33 @@ function objToSql(ob) {
 }
 
 let orm = {
-	selectAll: function(table, cb){
-		let queryString = 'SELECT * FROM ' + table + ';';
-		connection.query(queryString, function(err, result){
+	selectAll: function(tableName, cb){
+		let queryString = 'SELECT * FROM ' + tableName + ';';
+		connection.query(queryString, function(err, res){
 			if (err) throw err;
-			cb(result);
+			cb(res);
 		})
 	},
-	insertOne: function (table, burger_name, cb) {
-		let queryString = "INSERT INTO " + table + " (burger_name) VALUES ('" + burger_name + "')";
+	insertOne: function (tableName, burger_name, cb) {
+		let queryString = "INSERT INTO " + tableName + " (burger_name) VALUES ('" + burger_name + "')";
 		console.log(queryString);
-		connection.query(queryString, function (err, result) {
+		connection.query(queryString, function (err, res) {
 			if (err) throw err;
-			cb(result);
+			cb(res);
 		});
 	},
-	updateOne: function (table, objColVals, condition, cb) {
-		let queryString = 'UPDATE ' + table;
+	updateOne: function (tableName, column, state, cb) {
+		let queryString = 'UPDATE ' + tableName;
 
 		queryString = queryString + ' SET ';
-		queryString = queryString + objToSql(objColVals);
+		queryString = queryString + sqlObj(column);
 		queryString = queryString + ' WHERE ';
-		queryString = queryString + condition;
-		console.log(condition);
+		queryString = queryString + state;
+		console.log(state);
 
-		// console.log(queryString);
-		connection.query(queryString, function (err, result) {
+		connection.query(queryString, function (err, res) {
 			if (err) throw err;
-			cb(result);
+			cb(res);
 		});
 	},
 };
