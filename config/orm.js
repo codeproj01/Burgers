@@ -41,8 +41,7 @@ let orm = {
 			cb(res);
 		});
 	},
-	//
-	//Delete function/query
+	
     deleteOne: function(tableName, state, cb) {
 		let queryString = "DELETE FROM " + tableName;
 		queryString += " WHERE ";
@@ -55,7 +54,5 @@ let orm = {
 	  }
 	
 	};
-  
-//};
 
 module.exports = orm;

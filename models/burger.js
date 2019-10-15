@@ -16,14 +16,11 @@ let burger = {
 			cb(res);
 		});
 	}, 
-	//Delete function to throw away/delete burger from database.
 	delete: function(state, cb) {
 		orm.deleteOne('burgers', state, function(res) {
 		  cb(res);
 		});
 	  }
 	};
-	
-//};
 
 module.exports = burger;
