@@ -31,24 +31,34 @@ button {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+#devoured 
+ {
+	width: 150px;
+	float: right;
+	/*box-sizing: border-box;*/	
+} 
+.panel-body  {
+	width: 150px;
+	float: right;
+	text-align: left;
+}	
+
+
 /*
 .panel-body {
-	width: 30%;
+	text-align: left; 
 	float: right;
-	box-sizing: border-box;	
+	 width:80px; 
+  } */
+
+  /*
+  #devoured {
+	display:inline-block; 
+	text-align: left;
+	/*float: left;/
+	
 } */
-
-.panel-body {
-	text-align: right;
-	float: right;
-	 width:300px; 
-  } 
-
-#devoured {
-	display:inline-block;
-	/*text-align: left;*/
-	/*float: left; */
-}
 /*
 #add-to-list{
 	width: 100%;
@@ -56,7 +66,7 @@ button {
 } */
 
 #inputbox{
-	width: 400px;
+	width: 300px;
 	margin-left: auto;
 	margin-right: auto;
 }
