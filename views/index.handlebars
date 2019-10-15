@@ -20,7 +20,7 @@
 
   <img id="photo" src="/assets/img/burger.jpg" width="150px">
 
-<div class="container">
+<div class="the-buttons">
   <div id="devoured">
     <h3>Burgers devoured!</h3>
     <ul>
@@ -31,7 +31,7 @@
 
             <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
               <input type="hidden" name="devoured" value="false">
-              <button type="submit">Regurgitate devoured burger</button>
+              <button type="submit">UN-devour burger</button>
             </form>
           </li>
         {{/if}}
@@ -90,7 +90,7 @@
   <!-- END BLOCK -->
 <div id="add-to-list">
   <div id="inputbox">
-    <h2>Enter a new burger:</h2>
+    <h2>Enter a burger:</h2>
     <form class="create-update-form" action="burgers/create" method="POST">
       <div class="form-group">
         <label>Burger Name:</label>
