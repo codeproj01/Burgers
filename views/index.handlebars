@@ -20,6 +20,7 @@
 
   <img id="photo" src="/assets/img/burger.jpg" width="150px">
 
+<div class="container">
   <div id="devoured">
     <h3>Burgers devoured!</h3>
     <ul>
@@ -37,7 +38,7 @@
       {{/each}}
     </ul>
   </div>
-</div>
+
 <!--
 <div id="devoured GONE!!!">
     <h3>Burgers GONE</h3>
@@ -69,6 +70,7 @@
   <!-- END -->
   <!-- ADDITIONAL -->
   <!-- column 2 - DEVOURED BURGERS -->
+  
 	<div class="panel-body">
 		<ul class="list-group">
     			{{#each burgers}}
@@ -83,7 +85,8 @@
 				  {{/each}}
 		</ul>
 	</div>
-
+ </div>
+ 
   <!-- END BLOCK -->
 <div id="add-to-list">
   <div id="inputbox">
@@ -93,9 +96,7 @@
         <label>Burger Name:</label>
         <input type="text" name="burger_name">
       </div>
-      <div class="btn btn-primary">
       <button class="delete-burger btn btn-primary" type="submit">Add The Burger</button>
     </form>
   </div>
-</div>
 </div>
