@@ -43,16 +43,13 @@ let orm = {
 	},
 	//
 	//Delete function/query
-    delete: function(tableName, state, cb) {
-		var queryString = "DELETE FROM " + tableName;
+    deleteOne: function(tableName, state, cb) {
+		let queryString = "DELETE FROM " + tableName;
 		queryString += " WHERE ";
 		queryString += state;
 	
 		connection.query(queryString, function(err, res) {
-		  if (err) {
-			throw err;
-		  }
-	
+		  if (err) throw err;
 		  cb(res);
 		});
 	  }

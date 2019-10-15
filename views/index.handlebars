@@ -17,9 +17,11 @@
       {{/each}}
     </ul>
   </div>
+
   <img id="photo" src="/assets/img/burger.jpg" width="150px">
+
   <div id="devoured">
-    <h3>Burgers devoured</h3>
+    <h3>Burgers devoured!</h3>
     <ul>
       {{#each burgers}}
         {{#if this.devoured}}
@@ -28,7 +30,7 @@
 
             <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
               <input type="hidden" name="devoured" value="false">
-              <button type="submit">Reset burger to be Devoured</button>
+              <button type="submit">Regurgitate devoured burger</button>
             </form>
           </li>
         {{/if}}
@@ -37,15 +39,52 @@
   </div>
 </div>
 <!--
+<div id="devoured GONE!!!">
+    <h3>Burgers GONE</h3>
+    <ul>
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <li>
+            {{this.burger_name}}
+
+            <form action="burgers/delete/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="{{this.id}}">
+              <button type="submit">Gone Devoured</button>
+            </form>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div> -->
+<!--
   Added
-  -->
+  
 <div class="mt-4">
 	<h4 class="devoured-burger-name">{{burger_name}}</h4>
 
-	<!--Throw away burger button-->
+	<!--Throw away burger button
 	<button class="delete-burger btn btn-primary" data-id="{{this.id}}"><i class="far fa-trash-alt"></i> Throw away</button>
-</div>
-  <!-- -->
+</div> -->
+
+  <!-- END -->
+  <!-- ADDITIONAL -->
+  <!-- column 2 - DEVOURED BURGERS -->
+	<div class="panel-body">
+		<ul class="list-group">
+    			{{#each burgers}}
+    				{{#if this.devoured}}
+					  <li class="list-group-item">
+						<p class="burger-name">{{this.burger_name}}</p>
+						 <form class="pull-right" action="burgers/delete/{{this.id}}?_method=DELETE" method="POST">
+          			<button class="btn btn-default btn-danger" type="submit">Digest devoured burger</button>
+        		 </form>
+        	  </li>
+        		{{/if}}
+				  {{/each}}
+		</ul>
+	</div>
+
+  <!-- END BLOCK -->
 <div id="add-to-list">
   <div id="inputbox">
     <h2>Enter a new burger:</h2>
@@ -55,7 +94,7 @@
         <input type="text" name="burger_name">
       </div>
       <div class="btn btn-primary">
-      <button id="burger-add-button" type="submit">Add The Burger</button>
+      <button class="delete-burger btn btn-primary" type="submit">Add The Burger</button>
     </form>
   </div>
 </div>

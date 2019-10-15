@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const burger = require('../models/burger.js');
 
+// GET - selectAll
 router.get('/', function(req, res) {
 	res.redirect('/burgers');
 });
@@ -14,6 +15,7 @@ router.get('/burgers', function(req, res) {
 	});
 });
 
+// POST - insertOne
 router.post('/burgers/create', function(req, res){
 	console.log(req.body.burger_name)
 	burger.create('burger_name', req.body.burger_name, function(){
@@ -21,6 +23,7 @@ router.post('/burgers/create', function(req, res){
 	});
 });
 
+// PUT - updateOne
 router.put('/burgers/update/:id', function (req, res) {
 	let state = 'id = ' + req.params.id;
 
@@ -32,18 +35,15 @@ router.put('/burgers/update/:id', function (req, res) {
 });
 
 //DELETE route to throw away a burger.
-router.delete("/api/burgers/:id", function(req, res) {
-	var state = "id = " + req.params.id;
-  
-	burger.delete(state, function(result) {
-	  if (result.affectedRows == 0) {
-		// If no rows were changed, then the ID must not exist, so 404
-		return res.status(404).end();
-	  } else {
-		res.status(200).end();
-	  }
+// DELETE - deleteOne
+router.delete('/burgers/delete/:id', function (req, res) {
+	let state = 'id = ' + req.params.id;
+
+	burger.delete(state, function () {
+		res.redirect('/burgers');
 	});
-  });
+});
+
   
 
 module.exports = router;

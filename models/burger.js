@@ -18,7 +18,7 @@ let burger = {
 	}, 
 	//Delete function to throw away/delete burger from database.
 	delete: function(state, cb) {
-		orm.delete("burgers", state, function(res) {
+		orm.deleteOne('burgers', state, function(res) {
 		  cb(res);
 		});
 	  }
